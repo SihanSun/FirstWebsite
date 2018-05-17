@@ -28,7 +28,7 @@ public class SearchItem extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -37,6 +37,7 @@ public class SearchItem extends HttpServlet {
 		try {
 			array.put(new JSONObject().put("username", "abcd"));
 			array.put(new JSONObject().put("username", "1234"));
+			array.put(new JSONObject().put("email", "sis070@ucsd.edu"));
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
