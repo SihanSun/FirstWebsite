@@ -7,9 +7,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Item {
+	
+	/*all the private data part*/
 	private String itemId;
 	private String name;
 	private double rating;
+	private String address;
+	private Set<String> categories;
+	private String imageUrl;
+	private String url;
+	private double distance;
+	
+	/* accessors to the data*/
 	public String getItemId() {
 		return itemId;
 	}
@@ -34,14 +43,8 @@ public class Item {
 	public double getDistance() {
 		return distance;
 	}
-	private String address;
-	private Set<String> categories;
-	private String imageUrl;
-	private String url;
-	private double distance;
 	
-	
-	
+	/*java builder pattern by setting private constructor*/
 	private Item(ItemBuilder builder) {
 		this.itemId = builder.itemId;
 		this.name = builder.name;
@@ -70,9 +73,17 @@ public class Item {
 		return obj;
 	}
 	
-	
-
 	public static class ItemBuilder {
+		
+		private String itemId;
+		private String name;
+		private double rating;
+		private String address;
+		private Set<String> categories;
+		private String imageUrl;
+		private String url;
+		private double distance;
+		
 		public void setItemId(String itemId) {
 			this.itemId = itemId;
 		}
@@ -97,18 +108,17 @@ public class Item {
 		public void setDistance(double distance) {
 			this.distance = distance;
 		}
-		private String itemId;
-		private String name;
-		private double rating;
-		private String address;
-		private Set<String> categories;
-		private String imageUrl;
-		private String url;
-		private double distance;
+		
 		
 		public Item build() {
 			return new Item(this);
 		}
+	
+	
+	
+	
+
+	
 		
 
 	}
